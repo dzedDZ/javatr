@@ -1,3 +1,5 @@
+package by.rdcentre.javatr.lesson3;
+
 /**
  * Created by Denis on 22.02.2017.
  * В целочисленной последовательности есть нулевые элементы. Создать массив из
