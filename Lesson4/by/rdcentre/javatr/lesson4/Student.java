@@ -235,7 +235,9 @@ public class Student {
 
 	}
 
-	protected void setAvgRating(float _avgRating) {
+	protected void setAvgRating(float _avgRating) {// к атрибутам надо подходить очень осторожно
+		// получается, что студенту запретили вызывать метод, устанавливающий напрямую среднюю оценку
+		// но вот подклассы при таком атрибуте может обойти метод refresh и установить то значение, которое захотят
 		this.avgRating = _avgRating;
 	}
 }
