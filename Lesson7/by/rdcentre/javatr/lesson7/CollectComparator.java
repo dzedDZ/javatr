@@ -1,11 +1,8 @@
 package Lesson7.by.rdcentre.javatr.lesson7;
 
 import Lesson6.by.rdcentre.javatr.lesson6.*;
-
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * Created by Denis on 20.03.2017.

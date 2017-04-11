@@ -1,5 +1,5 @@
 package Lesson11.by.rdcentre.javatr.lesson11;
-import Lesson6.by.rdcentre.javatr.lesson6.Work;
+import Lesson6.by.rdcentre.javatr.lesson6.*;
 
 import java.io.*;
 import java.util.*;

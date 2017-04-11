@@ -1,4 +1,4 @@
-package by.rdcentre.javatr.lesson5;
+package Lesson5.by.rdcentre.javatr.lesson5;
 
 import java.util.GregorianCalendar;
 
