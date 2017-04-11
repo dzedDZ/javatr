@@ -18,11 +18,7 @@ public class FileSportingGood implements SportingGoodDAO {
 
     @Override
     public void delete(SportingGood sportingGood) {
-        sg.
+        sg.remove(sportingGood);
     }
 
-    @Override
-    public void deleteGoodByID(int id) {
-
-    }
 }
