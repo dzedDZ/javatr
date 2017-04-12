@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
  * Created by Denis on 03.03.2017.
  */
 public class Calendar {
-    public static void main(String[] args) {
+    public static void main(String[] args) {// –ª—é–±—ã–µ —Ä–µ—à–µ–Ω–∏—è –ª–æ–≥–∏—á–Ω–µ–µ –æ—Ñ–æ—Ä–º–ª—è—Ç—å –æ—Ç–¥–µ–ª—å–Ω—ã–º–∏ –∫–ª–∞—Å—Å–∞–º–∏, —á—Ç–æ–±—ã –±—ã–ª–æ —É–¥–æ–±–Ω–µ–µ –ø–µ—Ä–µ–∏—Å–ø–æ–ª—å–∑–æ–≤–∞—Ç—å
 
         GregorianCalendar d = new GregorianCalendar();
         int currentYear = d.get(java.util.Calendar.YEAR);
@@ -118,30 +118,30 @@ public class Calendar {
     }
     public static void printMonthDayTitles(int tri){
         if (tri == 0) {
-            System.out.print("ﬂÕ¬¿–‹                   " );
-            System.out.print("‘≈¬–¿À‹                  " );
-            System.out.print("Ã¿–“                     " );
-            System.out.println("¿œ–≈À‹                   " );
+            System.out.print("√ü√ç√Ç√Ä√ê√ú                   " );
+            System.out.print("√î√Ö√Ç√ê√Ä√ã√ú                  " );
+            System.out.print("√å√Ä√ê√í                     " );
+            System.out.println("√Ä√è√ê√Ö√ã√ú                   " );
         }
         else if (tri == 1) {
-            System.out.print("Ã¿…                      " );
-            System.out.print("»ﬁÕ‹                     " );
-            System.out.print("»ﬁÀ‹                     " );
-            System.out.println("¿¬√”—“                   " );
+            System.out.print("√å√Ä√â                      " );
+            System.out.print("√à√û√ç√ú                     " );
+            System.out.print("√à√û√ã√ú                     " );
+            System.out.println("√Ä√Ç√É√ì√ë√í                   " );
         }
         else if (tri == 2) {
-            System.out.print("—≈Õ“ﬂ¡–‹                 " );
-            System.out.print("Œ “ﬂ¡–‹                  " );
-            System.out.print("ÕŒﬂ¡–‹                   " );
-            System.out.println("ƒ≈ ¿¡–‹                  " );
+            System.out.print("√ë√Ö√ç√í√ü√Å√ê√ú                 " );
+            System.out.print("√é√ä√í√ü√Å√ê√ú                  " );
+            System.out.print("√ç√é√ü√Å√ê√ú                   " );
+            System.out.println("√Ñ√Ö√ä√Ä√Å√ê√ú                  " );
         }
         for (int i=0; i<4; i++) {
-            System.out.print(colorText("¬Ò", "RED"));
-            System.out.print(" œÌ ¬Ú — ◊Ú œÚ ");
+            System.out.print(colorText("√Ç√±", "RED"));
+            System.out.print(" √è√≠ √Ç√≤ √ë√∞ √ó√≤ √è√≤ ");
             if (i==3)
-                System.out.println(colorText("—·", "RED"));
+                System.out.println(colorText("√ë√°", "RED"));
             else
-                System.out.print(colorText("—·     ", "RED"));
+                System.out.print(colorText("√ë√°     ", "RED"));
         }
     }
 
