@@ -1,4 +1,4 @@
-package Lesson14.by.rdcentre.javatr.impl;
+package Lesson14.by.rdcentre.javatr.dao.impl;
 
 import Lesson14.by.rdcentre.javatr.dao.LeasingDAO;
 import Lesson14.by.rdcentre.javatr.dao.SportingGoodDAO;

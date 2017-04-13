@@ -1,4 +1,4 @@
-package Lesson14.by.rdcentre.javatr.impl;
+package Lesson14.by.rdcentre.javatr.dao.impl;
 
 import Lesson14.by.rdcentre.javatr.bean.User;
 import Lesson14.by.rdcentre.javatr.dao.UserDAO;
@@ -16,7 +16,7 @@ public class FileUser implements UserDAO {
     }
 
     @Override
-    public void registration(User user) {
+    public void registration(String login, String password) {
 
     }
 

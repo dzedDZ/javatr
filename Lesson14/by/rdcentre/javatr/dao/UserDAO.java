@@ -9,7 +9,8 @@ import java.util.ArrayList;
  */
 public interface UserDAO {
     void signIn(String login, String password);
-    void registration(User user);
+    void registration(String login, String password);
+
     ArrayList getUser();
     ArrayList getUser(User user);
 }
