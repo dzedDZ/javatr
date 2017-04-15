@@ -1,7 +1,7 @@
 package Lesson14.by.rdcentre.javatr.service.impl;
 
 import Lesson14.by.rdcentre.javatr.dao.UserDAO;
-import Lesson14.by.rdcentre.javatr.dao.impl.DAOFactory;
+import Lesson14.by.rdcentre.javatr.dao.factory.DAOFactory;
 import Lesson14.by.rdcentre.javatr.service.User;
 
 /**

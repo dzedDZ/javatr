@@ -1,8 +1,11 @@
-package Lesson14.by.rdcentre.javatr.dao.impl;
+package Lesson14.by.rdcentre.javatr.dao.factory;
 
 import Lesson14.by.rdcentre.javatr.dao.LeasingDAO;
 import Lesson14.by.rdcentre.javatr.dao.SportingGoodDAO;
 import Lesson14.by.rdcentre.javatr.dao.UserDAO;
+import Lesson14.by.rdcentre.javatr.dao.impl.FileLeasingDAO;
+import Lesson14.by.rdcentre.javatr.dao.impl.FileSportingGood;
+import Lesson14.by.rdcentre.javatr.dao.impl.FileUser;
 
 /**
  * Created by Denis on 12.04.2017.
