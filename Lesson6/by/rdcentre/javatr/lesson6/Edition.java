@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by Denis on 16.03.2017.
  */
-public class Edition {
+public class Edition {// аналогично, куда же пропали методы класса Object
     private GregorianCalendar publishingDate;
     private String publisherName;
     private String title;
