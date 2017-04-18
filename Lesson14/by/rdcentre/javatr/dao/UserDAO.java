@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public interface UserDAO {
     void signIn(String login, String password);
     void registration(String login, String password);
-
+    boolean isExist(User user);
     ArrayList getUser();
-    ArrayList getUser(User user);
+    ArrayList<User> getUser(User user);
 }
