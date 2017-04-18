@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class FileSportingGood implements SportingGoodDAO {
+public class FileSportingGood implements SportingGoodDAO, Serializable {
     public ArrayList<SportingGood> sg = new ArrayList<SportingGood>();
 
     public void loadFromDisk() {
@@ -58,8 +58,13 @@ public class FileSportingGood implements SportingGoodDAO {
     }
 
     @Override
-    public void delete(SportingGood sportingGood) {
-        sg.remove(sportingGood);
+    public void markArchive(SportingGood sportingGood) {
+        int i = sg.indexOf(sportingGood);
+        if (i != -1) {
+            sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), sportingGood.isLeased(), true));
+        }
     }
+
+
 
 }

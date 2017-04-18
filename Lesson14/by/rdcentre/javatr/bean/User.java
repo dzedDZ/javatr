@@ -6,7 +6,7 @@ package Lesson14.by.rdcentre.javatr.bean;
 public class User {
     private String name;
     private String address;
-    private String phoneNUmber;
+    private String phoneNumber;
 
     public User(String _name, String _address, String _phoneNumber){
         setAddress(_address);
@@ -33,10 +33,10 @@ public class User {
     }
 
     public String getPhoneNUmber() {
-        return phoneNUmber;
+        return phoneNumber;
     }
 
     public void setPhoneNUmber(String phoneNUmber) {
-        this.phoneNUmber = phoneNUmber;
+        this.phoneNumber = phoneNUmber;
     }
 }

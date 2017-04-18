@@ -7,14 +7,16 @@ public class SportingGood {
     private String name;
     private double price;
     private boolean isLeased;
+    private boolean isArchive;
 
-    public SportingGood(String _name, double _price, boolean _isLeased){
+    public SportingGood(String _name, double _price, boolean _isLeased, boolean _isArchive){
         setName(_name);
         setLeased(_isLeased);
         setPrice(_price);
+        setArchive(_isArchive);
     }
     public String toString() {
-        return getName() + "\t" + getPrice() + "\t" + isLeased();
+        return getName() + "\t" + getPrice() + "\t" + isLeased() + "\t" + isArchive();
     }
     public boolean isLeased() {
         return isLeased;
@@ -38,5 +40,13 @@ public class SportingGood {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isArchive() {
+        return isArchive;
+    }
+
+    public void setArchive(boolean archive) {
+        isArchive = archive;
     }
 }

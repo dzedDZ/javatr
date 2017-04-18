@@ -7,6 +7,6 @@ import Lesson14.by.rdcentre.javatr.bean.SportingGood;
  */
 public interface SportingGoodDAO {
     void addGood(SportingGood sportingGood);
-    void delete(SportingGood sportingGood);
+    void markArchive(SportingGood sportingGood);
 
 }

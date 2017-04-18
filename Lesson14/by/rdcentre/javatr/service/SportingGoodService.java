@@ -8,4 +8,5 @@ import Lesson14.by.rdcentre.javatr.bean.SportingGood;
 public interface SportingGoodService
 {
     void addSportingGood(SportingGood sportingGood);
+    void archiveSportingGood(SportingGood sportingGood);
 }

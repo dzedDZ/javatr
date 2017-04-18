@@ -53,14 +53,10 @@ public class FileUser implements UserDAO, Serializable {
     }
 
     @Override
-    public void signIn(String login, String password) {
-
-    }
-
-    @Override
-    public void registration(String login, String password) {
-        //u.add(user);
-
+    public void registration(User _user) {
+        if (!isExist(_user)){
+            u.add(_user);
+        }
     }
 
     @Override

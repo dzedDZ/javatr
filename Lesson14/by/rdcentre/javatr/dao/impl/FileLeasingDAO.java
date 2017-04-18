@@ -1,8 +1,6 @@
 package Lesson14.by.rdcentre.javatr.dao.impl;
 
 import Lesson14.by.rdcentre.javatr.bean.Leasing;
-import Lesson14.by.rdcentre.javatr.bean.SportingGood;
-import Lesson14.by.rdcentre.javatr.bean.User;
 import Lesson14.by.rdcentre.javatr.dao.LeasingDAO;
 
 import java.io.*;
@@ -57,7 +55,8 @@ public class FileLeasingDAO implements LeasingDAO {
     public void add(Leasing _leasingng) {
         l.add( _leasingng);
     }
-public boolean isExist(Leasing _leasing){
+
+    public boolean isExist(Leasing _leasing){
         if(l.contains(_leasing)) {return true;}
         else {return false;}
 
@@ -68,7 +67,11 @@ public boolean isExist(Leasing _leasing){
     }
 
     @Override
-    public void returnSportingGood(Leasing _leasing) {
-
+    public void returnSportingGood(Leasing _leasing, GregorianCalendar _enddate) {
+        int i = l.indexOf(_leasing);
+        if (i != -1) {
+            l.set(i, new Leasing(_leasing.getUser(), _leasing.getSportingGood(),
+                    _leasing.getStartDate(), _leasing.getLeasingDays(), _enddate, _leasing.getLeasingSum()));
+        }
     }
 }

@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by Denis on 13.04.2017.
  */
-public class LeasingImpl implements LeasingService{
+public class LeasingServiceImpl implements LeasingService{
 
     public void addLeasingObject(SportingGood good, User user) {
         DAOFactory daoObjectFactory = DAOFactory.getInstance();

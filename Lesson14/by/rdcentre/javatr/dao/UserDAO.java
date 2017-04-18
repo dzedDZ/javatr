@@ -8,9 +8,9 @@ import java.util.ArrayList;
  * Created by Denis on 10.04.2017.
  */
 public interface UserDAO {
-    void signIn(String login, String password);
-    void registration(String login, String password);
-    boolean isExist(User user);
+    //void signIn(User _user);
+    void registration(User _user);
+    boolean isExist(User _user);
     ArrayList getUser();
     ArrayList<User> getUser(User user);
 }

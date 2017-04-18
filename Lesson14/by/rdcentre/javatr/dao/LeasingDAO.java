@@ -10,6 +10,6 @@ import java.util.GregorianCalendar;
  * Created by Denis on 11.04.2017.
  */
 public interface LeasingDAO {
-    void hireOut(Leasing _leasingng);
-    void returnSportingGood(Leasing _leasing);
+    void hireOut(Leasing _leasing);
+    void returnSportingGood(Leasing _leasing, GregorianCalendar _enddate);
 }
