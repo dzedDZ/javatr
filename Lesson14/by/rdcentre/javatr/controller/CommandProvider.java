@@ -3,6 +3,7 @@ package Lesson14.by.rdcentre.javatr.controller;
 import Lesson14.by.rdcentre.javatr.controller.command.Command;
 import Lesson14.by.rdcentre.javatr.controller.command.CommandName;
 import Lesson14.by.rdcentre.javatr.controller.command.impl.AddUser;
+import Lesson14.by.rdcentre.javatr.controller.command.impl.Exit;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +17,7 @@ public final class CommandProvider {
     CommandProvider(){
     //    repository.put(CommandName.SIGN_IN, new SingIn());
         repository.put(CommandName.REGISTRATION, new AddUser());
+        repository.put(CommandName.EXIT, new Exit());
     //    repository.put(CommandName.ADD_BOOK, new AddBook());
         //repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
 //...
