@@ -20,6 +20,8 @@ public final class CommandProvider {
         repository.put(CommandName.EXIT, new Exit());
         repository.put(CommandName.ADD_GOOD, new AddSportingGood());
         repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
+        repository.put(CommandName.SHOW_GOOD, new ShowGood());
+
 //...
     }
 

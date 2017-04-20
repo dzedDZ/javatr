@@ -9,30 +9,35 @@ import java.util.ArrayList;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class FileSportingGood implements SportingGoodDAO, Serializable {
+public class FileSportingGood implements SportingGoodDAO {
     public ArrayList<SportingGood> sg = new ArrayList<SportingGood>();
-
+    {
+        loadFromDisk();
+    }
     public void loadFromDisk() {
         FileInputStream fr = null;
         ObjectInputStream os = null;
-        try {
-            fr = new FileInputStream("d:\\sg.txt");
-            os = new ObjectInputStream(fr);
-
-            this.sg = (ArrayList) os.readObject();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        File f = new File("d:\\sg.txt");
+        if(f.exists()) {
             try {
-                fr.close();
-                os.close();
+                fr = new FileInputStream("d:\\sg.txt");
+                os = new ObjectInputStream(fr);
+
+                this.sg = (ArrayList) os.readObject();
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    fr.close();
+                    os.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -55,6 +60,7 @@ public class FileSportingGood implements SportingGoodDAO, Serializable {
     @Override
     public void addGood(SportingGood sportingGood) {
         sg.add(sportingGood);
+        saveOnDisk();
     }
 
     @Override
@@ -65,6 +71,10 @@ public class FileSportingGood implements SportingGoodDAO, Serializable {
         }
     }
 
+    @Override
+    public ArrayList getSportingGood() {
+        return sg;
+    }
 
 
 }

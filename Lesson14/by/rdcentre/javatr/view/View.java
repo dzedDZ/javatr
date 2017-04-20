@@ -13,7 +13,7 @@ public class View {
         Controller cl = new Controller();
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("1-Exit; 2-Add; 3-Search; 4-Show goods");
+        System.out.println("Enter command");
 
         String request;
         String response;
@@ -21,7 +21,7 @@ public class View {
         while( 1==1 ) {
             while (!sc.hasNextLine()) {
                 sc.next();
-                // System.out.println("1-Exit; 2-Add; 3-Search; 4-Show goods");
+                System.out.println("Enter command");
             }
             request = sc.nextLine();
             response = cl.executeTask(request);

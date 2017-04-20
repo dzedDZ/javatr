@@ -19,26 +19,29 @@ public class FileUser implements UserDAO {
     public void loadFromDisk() {
         FileInputStream fr = null;
         ObjectInputStream os = null;
-        try {
-            fr = new FileInputStream("d:\\u.txt");
-            os = new ObjectInputStream(fr);
+        File f = new File("d:\\u.txt");
+            if(f.exists()) {
+                try {
+                    fr = new FileInputStream("d:\\u.txt");
+                    os = new ObjectInputStream(fr);
 
-            this.u = (ArrayList) os.readObject();
+                    this.u = (ArrayList) os.readObject();
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fr.close();
-                os.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        fr.close();
+                        os.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        }
     }
 
     public void saveOnDisk()  {

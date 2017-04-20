@@ -1,6 +1,6 @@
 package Lesson14.by.rdcentre.javatr.controller.command.impl;
 
-import Lesson14.by.rdcentre.javatr.bean.User;
+import Lesson14.by.rdcentre.javatr.bean.SportingGood;
 import Lesson14.by.rdcentre.javatr.controller.command.Command;
 import Lesson14.by.rdcentre.javatr.service.SportingGoodService;
 import Lesson14.by.rdcentre.javatr.service.UserService;
@@ -20,11 +20,11 @@ public class ShowGood implements Command {
         SportingGoodService sportingGoodService = serviceFactory.getSportingGoodService();
 
         //    try {
-        ArrayList<User> sg = sport. showUser();
+        ArrayList<SportingGood> sg = sportingGoodService.showGoodService();
         response = "***End of Good list***";
         //  }
         System.out.println("name|price|isArchive|isLeased");
-        for (User str : u) {
+        for (SportingGood str : sg) {
             System.out.println(str);
         }
         return response;

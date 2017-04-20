@@ -12,8 +12,10 @@ public class WrongRequest implements Command {
         response = "Request could not be recognised " + "\r\n" +
                 "please use the following request:" + "\r\n" +
                 "EXIT [without params] to exit the program" + "\r\n" +
-                "Show_user [without params] to list all users" + "\r\n" +
+                "Show_user  to list all users" + "\r\n" +
                 "Add_user [name] [address] [phonenumber] to add a user" + "\r\n" +
+                "Add_good [name] [price] to add a sporting good" + "\r\n" +
+                "Show_good to list all sporting goods" + "\r\n" +
                 "";
         ;
         return response;
