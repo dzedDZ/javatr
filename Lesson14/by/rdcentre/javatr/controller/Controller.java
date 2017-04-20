@@ -12,8 +12,15 @@ public final class Controller {
     public String executeTask(String request){
         String commandName;
         Command executionCommand;
-        commandName = request.substring(0, request.indexOf(paramDelimeter));
+        int paramDelimeterIndex;
+//System.out.println(request);
+//System.out.println(request.indexOf(paramDelimeter));
+        if (request.indexOf(paramDelimeter)== -1) {paramDelimeterIndex = request.length();}
+        else {paramDelimeterIndex = request.indexOf(paramDelimeter);}
+
+        commandName = request.substring(0, paramDelimeterIndex);
         executionCommand = provider.getCommand(commandName);
+//System.out.println(commandName);
         String response;
         response = executionCommand.execute(request);
         return response;

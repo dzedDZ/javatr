@@ -5,6 +5,8 @@ import Lesson14.by.rdcentre.javatr.dao.factory.DAOFactory;
 import Lesson14.by.rdcentre.javatr.service.UserService;
 import Lesson14.by.rdcentre.javatr.bean.User;
 
+import java.util.ArrayList;
+
 /**
  * Created by Denis on 13.04.2017.
  */
@@ -26,5 +28,11 @@ public class UserServiceImpl implements UserService{
             }
             ;
         }
+    }
+    public ArrayList showUser(){
+        DAOFactory daoObjectFactory = DAOFactory.getInstance();
+        UserDAO userDAO = daoObjectFactory.getUserDAO();
+
+        return userDAO.getUser();
     }
 }

@@ -2,8 +2,7 @@ package Lesson14.by.rdcentre.javatr.controller;
 
 import Lesson14.by.rdcentre.javatr.controller.command.Command;
 import Lesson14.by.rdcentre.javatr.controller.command.CommandName;
-import Lesson14.by.rdcentre.javatr.controller.command.impl.AddUser;
-import Lesson14.by.rdcentre.javatr.controller.command.impl.Exit;
+import Lesson14.by.rdcentre.javatr.controller.command.impl.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +15,11 @@ public final class CommandProvider {
 
     CommandProvider(){
     //    repository.put(CommandName.SIGN_IN, new SingIn());
-        repository.put(CommandName.REGISTRATION, new AddUser());
+        repository.put(CommandName.ADD_USER, new AddUser());
+        repository.put(CommandName.SHOW_USER, new ShowUser());
         repository.put(CommandName.EXIT, new Exit());
-    //    repository.put(CommandName.ADD_BOOK, new AddBook());
-        //repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
+        repository.put(CommandName.ADD_GOOD, new AddSportingGood());
+        repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
 //...
     }
 
@@ -28,6 +28,7 @@ public final class CommandProvider {
         Command command = null;
     try{
         commandName = CommandName.valueOf(name.toUpperCase());
+        command = repository.get(commandName);
     }catch (IllegalArgumentException | NullPointerException e){
         command = repository.get(CommandName.WRONG_REQUEST);
     }

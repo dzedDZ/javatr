@@ -9,8 +9,12 @@ import java.util.ArrayList;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class FileUser implements UserDAO, Serializable {
+public class FileUser implements UserDAO {
     public ArrayList<User> u = new ArrayList<User>();
+    {
+        loadFromDisk();
+    }
+
 
     public void loadFromDisk() {
         FileInputStream fr = null;
@@ -38,17 +42,29 @@ public class FileUser implements UserDAO, Serializable {
     }
 
     public void saveOnDisk()  {
+        FileOutputStream fileOut = null;
+        ObjectOutputStream oos = null;
 
         try{
-            FileOutputStream fileOut = new FileOutputStream("d:\\u.txt");
-            ObjectOutputStream oos = new ObjectOutputStream (fileOut);
+            fileOut = new FileOutputStream("d:\\u.txt");
+            oos = new ObjectOutputStream (fileOut);
 
             oos.writeObject(this.u);
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         catch(Exception e){
+            System.out.println("111");
             System.err.println(e.getMessage());
+            e.printStackTrace();
+        }finally {
+            try {
+                fileOut.close();
+                oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -56,6 +72,7 @@ public class FileUser implements UserDAO, Serializable {
     public void registration(User _user) {
         if (!isExist(_user)){
             u.add(_user);
+            saveOnDisk();
         }
     }
 

@@ -10,7 +10,8 @@ public class Exit implements Command {
     public String execute(String request) {
         //    try {
         String response = null;
-     response = "Bye";
+        response = "Bye";
+
         //  }
         //catch () {
 

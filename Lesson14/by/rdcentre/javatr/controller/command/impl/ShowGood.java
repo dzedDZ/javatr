@@ -2,27 +2,28 @@ package Lesson14.by.rdcentre.javatr.controller.command.impl;
 
 import Lesson14.by.rdcentre.javatr.bean.User;
 import Lesson14.by.rdcentre.javatr.controller.command.Command;
+import Lesson14.by.rdcentre.javatr.service.SportingGoodService;
 import Lesson14.by.rdcentre.javatr.service.UserService;
 import Lesson14.by.rdcentre.javatr.service.factory.ServiceFactory;
 
 import java.util.ArrayList;
 
 /**
- * Created by Denis on 18.04.2017.
+ * Created by Denis on 20.04.2017.
  */
-public class ShowUser implements Command {
+public class ShowGood implements Command {
     @Override
     public String execute(String request) {
         String response = null;
 
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        UserService userService = serviceFactory.getUserService();
+        SportingGoodService sportingGoodService = serviceFactory.getSportingGoodService();
 
         //    try {
-        ArrayList<User> u = userService.showUser();
-        response = "***End of User list***";
+        ArrayList<User> sg = sport. showUser();
+        response = "***End of Good list***";
         //  }
-        System.out.println("name|address|phonenumber");
+        System.out.println("name|price|isArchive|isLeased");
         for (User str : u) {
             System.out.println(str);
         }

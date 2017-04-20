@@ -3,7 +3,7 @@ package Lesson14.by.rdcentre.javatr.bean;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class SportingGood {
+public class SportingGood implements java.io.Serializable{
     private String name;
     private double price;
     private boolean isLeased;

@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class Leasing {
+public class Leasing implements java.io.Serializable{
     private User user;
     private SportingGood sportingGood;
     private GregorianCalendar startDate;

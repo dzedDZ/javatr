@@ -1,6 +1,8 @@
 package Lesson14.by.rdcentre.javatr.view;
 
 import Lesson14.by.rdcentre.javatr.controller.Controller;
+import Lesson14.by.rdcentre.javatr.controller.command.CommandName;
+
 import java.util.Scanner;
 
 /**
@@ -12,15 +14,21 @@ public class View {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("1-Exit; 2-Add; 3-Search; 4-Show goods");
+
         String request;
+        String response;
 
         while( 1==1 ) {
             while (!sc.hasNextLine()) {
-                sc.nextLine();
+                sc.next();
                 // System.out.println("1-Exit; 2-Add; 3-Search; 4-Show goods");
             }
             request = sc.nextLine();
-            System.out.println(cl.executeTask(request));
+            response = cl.executeTask(request);
+            System.out.println(response);
+            if (response == "Bye"){
+                break;
+            }
         }
     }
 }

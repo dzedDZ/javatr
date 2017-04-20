@@ -3,7 +3,7 @@ package Lesson14.by.rdcentre.javatr.bean;
 /**
  * Created by Denis on 10.04.2017.
  */
-public class User {
+public class User implements java.io.Serializable{
     private String name;
     private String address;
     private String phoneNumber;
@@ -14,7 +14,7 @@ public class User {
         setPhoneNUmber(_phoneNumber);
     }
     public String toString(){
-        return getName() + "\t" + getPhoneNUmber() + "\t" + getAddress();
+        return getName() + " | " + getPhoneNUmber() + " | " + getAddress();
     }
     public String getName() {
         return name;
