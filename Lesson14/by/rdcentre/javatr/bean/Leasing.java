@@ -1,5 +1,6 @@
 package Lesson14.by.rdcentre.javatr.bean;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
@@ -24,8 +25,10 @@ public class Leasing implements java.io.Serializable{
     }
 
     public String toString(){
-        return user.getName() + "\t" + sportingGood.getName() + "\t" + getStartDate().toString() + "\t"
-                + getLeasingDays() + "\t" + getEndDate().toString() + "\t" + getLeasingSum();
+        return user.getName() + "|" + sportingGood.getName() + "|" + getStartDate().get(Calendar.YEAR) +
+                "-" + getStartDate().get(Calendar.MONTH) + "-" + getStartDate().get(Calendar.DATE) + "|"
+                + getLeasingDays() + "|" + getEndDate().get(Calendar.YEAR)  + "-" + getEndDate().get(Calendar.MONTH) +
+                "-" + getEndDate().get(Calendar.DATE) + "|" + getLeasingSum();
 
     }
 

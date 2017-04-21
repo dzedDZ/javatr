@@ -6,6 +6,7 @@ import Lesson14.by.rdcentre.javatr.service.UserService;
 import Lesson14.by.rdcentre.javatr.bean.User;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Denis on 13.04.2017.
@@ -35,4 +36,26 @@ public class UserServiceImpl implements UserService{
 
         return userDAO.getUser();
     }
+
+    @Override
+    public User getUserService(String userName) {
+
+    DAOFactory daoObjectFactory = DAOFactory.getInstance();
+    UserDAO userDAO = daoObjectFactory.getUserDAO();
+    ArrayList u = userDAO.getUser() ; // get all Users
+
+    Iterator<User> itr = u.iterator();
+
+        System.out.println("Looking for:'" + userName );
+
+        while (itr.hasNext()) {
+        User user = itr.next();
+
+        if (user.getName().equals(userName)) {
+            System.out.println(user.toString());
+            return user;
+        }
+    }
+        return null;
+}
 }

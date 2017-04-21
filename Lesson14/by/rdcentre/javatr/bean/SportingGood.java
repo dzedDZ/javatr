@@ -16,7 +16,7 @@ public class SportingGood implements java.io.Serializable{
         setArchive(_isArchive);
     }
     public String toString() {
-        return getName() + "\t" + getPrice() + "\t" + isLeased() + "\t" + isArchive();
+        return getName() + "|" + getPrice() + "|" + isLeased() + "|" + isArchive();
     }
     public boolean isLeased() {
         return isLeased;

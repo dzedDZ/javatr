@@ -23,7 +23,7 @@ public class ShowGood implements Command {
         ArrayList<SportingGood> sg = sportingGoodService.showGoodService();
         response = "***End of Good list***";
         //  }
-        System.out.println("name|price|isArchive|isLeased");
+        System.out.println("name|price|isLeased|isArchive");
         for (SportingGood str : sg) {
             System.out.println(str);
         }

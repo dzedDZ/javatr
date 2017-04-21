@@ -1,5 +1,7 @@
 package Lesson14.by.rdcentre.javatr.service;
 
+import Lesson14.by.rdcentre.javatr.bean.User;
+
 import java.util.ArrayList;
 
 /**
@@ -9,4 +11,5 @@ public interface UserService {
     //void SignIn(String name, String address, String phoneNumber);
     void Registration(String name, String address, String phoneNumber);
     ArrayList showUser();
+    User getUserService(String userName);
 }

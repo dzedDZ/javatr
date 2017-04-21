@@ -21,6 +21,8 @@ public final class CommandProvider {
         repository.put(CommandName.ADD_GOOD, new AddSportingGood());
         repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
         repository.put(CommandName.SHOW_GOOD, new ShowGood());
+        repository.put(CommandName.SHOW_LEAS, new ShowLeas());
+        repository.put(CommandName.HIRE_OUT, new HireOut());
 
 //...
     }

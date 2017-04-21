@@ -68,12 +68,22 @@ public class FileSportingGood implements SportingGoodDAO {
         int i = sg.indexOf(sportingGood);
         if (i != -1) {
             sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), sportingGood.isLeased(), true));
+            saveOnDisk();
         }
     }
 
     @Override
     public ArrayList getSportingGood() {
         return sg;
+    }
+
+    @Override
+    public void markLeased(SportingGood sportingGood) {
+        int i = sg.indexOf(sportingGood);
+        if (i != -1) {
+            sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), true, false));
+            saveOnDisk();
+        }
     }
 
 

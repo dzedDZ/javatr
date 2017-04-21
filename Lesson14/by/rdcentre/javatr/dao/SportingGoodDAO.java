@@ -11,5 +11,6 @@ public interface SportingGoodDAO {
     void addGood(SportingGood sportingGood);
     void markArchive(SportingGood sportingGood);
     ArrayList getSportingGood();
+    void markLeased(SportingGood sportingGood);
 
 }

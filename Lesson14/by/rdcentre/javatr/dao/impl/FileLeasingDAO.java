@@ -12,32 +12,36 @@ import java.util.GregorianCalendar;
  */
 public class FileLeasingDAO implements LeasingDAO {
     public ArrayList<Leasing> l = new ArrayList<Leasing>();
-
+    {
+        loadFromDisk();
+    }
     public void loadFromDisk() {
         FileInputStream fr = null;
         ObjectInputStream os = null;
-        try {
-            fr = new FileInputStream("d:\\l.txt");
-            os = new ObjectInputStream(fr);
-
-            this.l = (ArrayList) os.readObject();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        File f = new File("d:\\l.txt");
+        if (f.exists()) {
             try {
-                fr.close();
-                os.close();
+                fr = new FileInputStream("d:\\l.txt");
+                os = new ObjectInputStream(fr);
+
+                this.l = (ArrayList) os.readObject();
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    fr.close();
+                    os.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
-
     public void saveOnDisk()  {
 
         try{
@@ -63,7 +67,9 @@ public class FileLeasingDAO implements LeasingDAO {
 }
     @Override
     public void hireOut(Leasing _leasingng) {
+
         l.add( _leasingng);
+        saveOnDisk();
     }
 
     @Override
@@ -73,5 +79,10 @@ public class FileLeasingDAO implements LeasingDAO {
             l.set(i, new Leasing(_leasing.getUser(), _leasing.getSportingGood(),
                     _leasing.getStartDate(), _leasing.getLeasingDays(), _enddate, _leasing.getLeasingSum()));
         }
+    }
+
+    @Override
+    public ArrayList getLeasing() {
+        return l;
     }
 }
