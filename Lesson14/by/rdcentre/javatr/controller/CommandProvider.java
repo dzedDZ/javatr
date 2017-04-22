@@ -23,7 +23,7 @@ public final class CommandProvider {
         repository.put(CommandName.SHOW_GOOD, new ShowGood());
         repository.put(CommandName.SHOW_LEAS, new ShowLeas());
         repository.put(CommandName.HIRE_OUT, new HireOut());
-
+        repository.put(CommandName.RETURN, new Return());
 //...
     }
 

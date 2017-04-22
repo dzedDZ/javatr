@@ -4,24 +4,22 @@ import Lesson14.by.rdcentre.javatr.controller.command.Command;
 import Lesson14.by.rdcentre.javatr.service.LeasingService;
 import Lesson14.by.rdcentre.javatr.service.factory.ServiceFactory;
 
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Denis on 21.04.2017.
+ * Created by R80 Home on 21.04.2017.
  */
-public class HireOut implements Command {
+public class Return implements Command{
     @Override
     public String execute(String request) {
         String userName = "";
         String sportingGoodName = "";
-        int startDateYear = 1900;
-        int startDateMonth = 1;
-        int startDateDay = 1;
-        int leasingDays = 0;
 
-        double leasingSum = -1.0;
+        int endDateYear = 2900;
+        int endDateMonth = 12;
+        int endDateDay = 31;
+
         String response = "";
 
         Pattern regex = Pattern.compile("([\\S\\d]+)"); //paramDelimeter should be ' '.
@@ -32,57 +30,44 @@ public class HireOut implements Command {
         { userName = matcher.group(1);}
         else
         {
-            response = "Hire_Out: userName param missed";
+            response = "Return: userName param missed";
             return response;
         }
         if(matcher.find())
         { sportingGoodName = matcher.group(1);}
         else
         {
-            response = "Hire_Out: sportingGoodName param missed";
+            response = "Return: sportingGoodName param missed";
             return response;
         }
         if(matcher.find())
-        { startDateYear = Integer.parseInt(matcher.group(1));}
+        { endDateYear = Integer.parseInt(matcher.group(1));}
         else
         {
-            response = "Hire_Out: startDateYear param missed";
+            response = "Return: endDateYear param missed";
             return response;
         }
         if(matcher.find())
-        { startDateMonth = Integer.parseInt(matcher.group(1));}
+        { endDateMonth = Integer.parseInt(matcher.group(1));}
         else
         {
-            response = "Hire_Out: startDateMonth param missed";
+            response = "Return: endDateMonth param missed";
             return response;
         }
         if(matcher.find())
-        { startDateDay = Integer.parseInt(matcher.group(1));}
+        { endDateDay = Integer.parseInt(matcher.group(1));}
         else
         {
-            response = "Hire_Out: startDateDay param missed";
-            return response;
-        }
-        if(matcher.find())
-        { leasingDays = Integer.parseInt(matcher.group(1));}
-        else
-        {
-            response = "Hire_Out: leasingDays param missed";
-            return response;
-        }
-        if(matcher.find())
-        { leasingSum = Double.parseDouble(matcher.group(1));}
-        else
-        {
-            response = "Hire_Out: LeasingSum  param missed";
+            response = "Return: endDateDay param missed";
             return response;
         }
 
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         LeasingService leasingService = serviceFactory.getLeasingService();
 
-        response = leasingService.addLeasingObject(sportingGoodName, userName, startDateYear,
-                startDateMonth, startDateDay, leasingDays, leasingSum);
+        response = leasingService.returnLeasingObject(sportingGoodName, userName, endDateYear,
+                endDateMonth, endDateDay);
+
         return response;
     }
 }

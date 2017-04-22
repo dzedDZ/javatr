@@ -41,6 +41,13 @@ public class SportingGoodServiceImpl implements SportingGoodService{
     }
 
     @Override
+    public void markAvailableSportingGood(SportingGood sportingGood) {
+        DAOFactory daoObjectFactory = DAOFactory.getInstance();
+        SportingGoodDAO sportingGoodDAO = daoObjectFactory.getSportingGoodDAO();
+        sportingGoodDAO.markAvailable(sportingGood);
+    }
+
+    @Override
     public ArrayList showGoodService() {
         DAOFactory daoObjectFactory = DAOFactory.getInstance();
         SportingGoodDAO sportingGoodDAO = daoObjectFactory.getSportingGoodDAO();
@@ -55,16 +62,12 @@ public class SportingGoodServiceImpl implements SportingGoodService{
 
         Iterator<SportingGood> itr = sg.iterator();
 
-        System.out.println("Looking for:'" + sportingGoodName );
+     //   System.out.println("Looking for:/" + sportingGoodName );
 
         while (itr.hasNext()) {
             SportingGood sportingGood = itr.next();
 
-            if (sportingGood.getName().equals(sportingGoodName)
-                    && !(sportingGood.isLeased())
-                    && !(sportingGood.isArchive())
-                    ) {
-
+            if (sportingGood.getName().equals(sportingGoodName)) {
                 System.out.println(sportingGood.toString());
                 return sportingGood;
             }

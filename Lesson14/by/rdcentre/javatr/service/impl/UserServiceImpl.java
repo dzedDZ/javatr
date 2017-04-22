@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService{
 
     Iterator<User> itr = u.iterator();
 
-        System.out.println("Looking for:'" + userName );
+      //  System.out.println("Looking for:*" + userName );
 
         while (itr.hasNext()) {
         User user = itr.next();

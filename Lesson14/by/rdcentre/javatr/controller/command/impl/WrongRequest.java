@@ -17,7 +17,8 @@ public class WrongRequest implements Command {
                 "Add_good [name] [price] to add a sporting good" + "\r\n" +
                 "Show_good to list all sporting goods" + "\r\n" +
                 "Show_leas to list all leased goods" + "\r\n" +
-                "Hire_out [userName] [goodName] [startDateYear] [startDateMonth] [startDateDay] [leasingDays] [endDateYear] [endDateMonth] [endDateDay] [leasingSum] to create leasing " + "\r\n" +
+                "Hire_out [userName] [goodName] [startDateYear] [startDateMonth] [startDateDay] [leasingDays] [leasingSum] to create leasing " + "\r\n" +
+                "Return [userName] [goodName] [endDateYear] [endDateMonth] [endDateDay]" + "\r\n" +
                 "";
         ;
         return response;

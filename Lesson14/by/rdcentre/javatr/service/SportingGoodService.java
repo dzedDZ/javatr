@@ -12,6 +12,7 @@ public interface SportingGoodService
     void addSportingGood(String name, Double price, boolean isArchive, boolean isLeased);
     void archiveSportingGood(SportingGood sportingGood);
     void markLeasedSportingGood(SportingGood sportingGood);
+    void markAvailableSportingGood(SportingGood sportingGood);
     ArrayList showGoodService();
     SportingGood getSportingGoodService(String sportingGoodName);
 }

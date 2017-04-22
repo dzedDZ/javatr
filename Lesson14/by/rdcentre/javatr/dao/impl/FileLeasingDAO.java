@@ -79,6 +79,7 @@ public class FileLeasingDAO implements LeasingDAO {
             l.set(i, new Leasing(_leasing.getUser(), _leasing.getSportingGood(),
                     _leasing.getStartDate(), _leasing.getLeasingDays(), _enddate, _leasing.getLeasingSum()));
         }
+        saveOnDisk();
     }
 
     @Override
