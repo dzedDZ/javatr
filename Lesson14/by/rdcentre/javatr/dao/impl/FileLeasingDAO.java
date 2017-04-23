@@ -76,8 +76,8 @@ public class FileLeasingDAO implements LeasingDAO {
     public void returnSportingGood(Leasing _leasing, GregorianCalendar _enddate) {
         int i = l.indexOf(_leasing);
         if (i != -1) {
-            l.set(i, new Leasing(_leasing.getUser(), _leasing.getSportingGood(),
-                    _leasing.getStartDate(), _leasing.getLeasingDays(), _enddate, _leasing.getLeasingSum()));
+            l.get(i).setEndDate(_enddate);
+            //l.set(i, new Leasing(_leasing.getUser(), _leasing.getSportingGood(), _leasing.getStartDate(), _leasing.getLeasingDays(), _enddate, _leasing.getLeasingSum()));
         }
         saveOnDisk();
     }

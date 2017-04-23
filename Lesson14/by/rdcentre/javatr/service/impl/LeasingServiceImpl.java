@@ -41,8 +41,7 @@ public class LeasingServiceImpl implements LeasingService{
             return response;
         }
 
-        sportingGoodService.markLeasedSportingGood(sportingGood); // mark it Leased in SportingGoodArrayList
-        sportingGood.setLeased(true); //mark sporting good leased in the object which will be moved into Leasing ArrayList
+        sportingGoodService.markLeasedSportingGood(sportingGood);
 
         UserService userService = serviceFactory.getUserService();
         user = userService.getUserService(userName);

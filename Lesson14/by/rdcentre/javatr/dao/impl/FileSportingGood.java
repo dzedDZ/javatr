@@ -67,7 +67,8 @@ public class FileSportingGood implements SportingGoodDAO {
     public void markArchive(SportingGood sportingGood) {
         int i = sg.indexOf(sportingGood);
         if (i != -1) {
-            sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), sportingGood.isLeased(), true));
+            sg.get(i).setArchive(true);
+            //sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), sportingGood.isLeased(), true));
             saveOnDisk();
         }
     }
@@ -81,7 +82,8 @@ public class FileSportingGood implements SportingGoodDAO {
     public void markLeased(SportingGood sportingGood) {
         int i = sg.indexOf(sportingGood);
         if (i != -1) {
-            sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), true, false));
+            sg.get(i).setLeased(true);
+            //sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), true, false));
             saveOnDisk();
         }
     }
@@ -90,7 +92,8 @@ public class FileSportingGood implements SportingGoodDAO {
     public void markAvailable(SportingGood sportingGood) {
         int i = sg.indexOf(sportingGood);
         if (i != -1) {
-            sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), false, false));
+            sg.get(i).setLeased(false);
+            //sg.set(i, new SportingGood(sportingGood.getName(), sportingGood.getPrice(), false, false));
             saveOnDisk();
         }
     }
