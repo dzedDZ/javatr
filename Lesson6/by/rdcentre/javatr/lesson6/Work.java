@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by Denis on 16.03.2017.
  */
-public class Work {
+public class Work {// куда пропали методы equals и hashCode, объекты вашего же класса данные содержат, следовательно, не могут обойтись без этих методов
     private String title;
     private String authorName;
     private GregorianCalendar firstTimePublishingDate;

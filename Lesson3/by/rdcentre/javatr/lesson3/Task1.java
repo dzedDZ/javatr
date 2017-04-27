@@ -3,7 +3,7 @@ import java.util.Scanner;
 // task1
 //
 public class Task1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) {// всегда делим задачу на подзадачи и решаем их в отдельных методах
         int n = 5;
 
         int k, sum;

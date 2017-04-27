@@ -7,36 +7,37 @@ import java.util.List;
 
 /**
  * Created by Denis on 16.03.2017.
- * задать форму сборника в main
+ * Г§Г Г¤Г ГІГј ГґГ®Г°Г¬Гі Г±ГЎГ®Г°Г­ГЁГЄГ  Гў main
  */
-public class Collect {
+public class Collect {// РІ РѕРґРЅРѕРј РєР»Р°СЃСЃРµ СЃРѕР±СЂР°РЅС‹ РјРµС‚РѕРґС‹ Рё РїРѕР»СЏ РєР»Р°СЃСЃР°-СЃСѓС‰РЅРѕСЃС‚Рё - РљРѕР»Р»РµРєС†РёСЏРР·РґР°РЅРёР№, Рё РјРµС‚РѕРґС‹, РєРѕС‚РѕСЂС‹Р№ РґРѕР»Р¶РЅС‹ СЂР°Р±РѕС‚Р°С‚СЊ СЃ СЌС‚РѕР№ РєРѕР»Р»РµРєС†РёРµР№
+    // Рё СѓР¶Рµ РЅРµ РѕРїСЂРµРґРµР»РёС€СЊ, РєРѕСЂСЂРµРєС‚РЅРѕ РѕРїСЂРµРґРµР»РµРЅС‹ РјРµС‚РѕРґС‹ РїРѕ РєР»Р°СЃСЃР°Рј РёР»Рё РЅРµС‚.
     public static void main(String args[]) {
-        Edition e1 = new Book("Детская книга",
-                "Сборник стихов", 1989, 11, 01, "Марина Цветаева");
-        Collect col1 = new Collect("избранное Марины Цветаевой", e1);
-        col1.addRecord("Вчера еще", "Марина Цветаева");
-        col1.addRecord("Мы с тобой лишь два отголоска", "Марина Цветаева");
-        col1.addRecord("Под лаской плюшевого пледа", "Марина Цветаева");
-        //col1.collection.add(new Work("Вчера еще", "Марина Цветаева"));
-        //col1.collection.add(new Work("Мы с тобой лишь два отголоска", "Марина Цветаева"));
-        //col1.collection.add(new Work("Под лаской плюшевого пледа", "Марина Цветаева"));
+        Edition e1 = new Book("Г„ГҐГІГ±ГЄГ Гї ГЄГ­ГЁГЈГ ",
+                "Г‘ГЎГ®Г°Г­ГЁГЄ Г±ГІГЁГµГ®Гў", 1989, 11, 01, "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ ");
+        Collect col1 = new Collect("ГЁГ§ГЎГ°Г Г­Г­Г®ГҐ ГЊГ Г°ГЁГ­Г» Г–ГўГҐГІГ ГҐГўГ®Г©", e1);
+        col1.addRecord("Г‚Г·ГҐГ°Г  ГҐГ№ГҐ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ ");
+        col1.addRecord("ГЊГ» Г± ГІГ®ГЎГ®Г© Г«ГЁГёГј Г¤ГўГ  Г®ГІГЈГ®Г«Г®Г±ГЄГ ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ ");
+        col1.addRecord("ГЏГ®Г¤ Г«Г Г±ГЄГ®Г© ГЇГ«ГѕГёГҐГўГ®ГЈГ® ГЇГ«ГҐГ¤Г ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ ");
+        //col1.collection.add(new Work("Г‚Г·ГҐГ°Г  ГҐГ№ГҐ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ "));
+        //col1.collection.add(new Work("ГЊГ» Г± ГІГ®ГЎГ®Г© Г«ГЁГёГј Г¤ГўГ  Г®ГІГЈГ®Г«Г®Г±ГЄГ ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ "));
+        //col1.collection.add(new Work("ГЏГ®Г¤ Г«Г Г±ГЄГ®Г© ГЇГ«ГѕГёГҐГўГ®ГЈГ® ГЇГ«ГҐГ¤Г ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ "));
 
         col1.showCollection();
 
-        Edition e2 = new Magazine("издательство ЭКСМО", "Новый журнал",
-                1900, 10, 1, 4, "Поэзия");
-        Collect col2 = new Collect("стихи о любви", e2);
-        col2.addRecord("Кроме Любви", "Марина Цветаева");
-        col2.addRecord("Письмо к женщине", "Сергей Есенин");
-        col2.addRecord("Я любить тебя буду можно?", "Эдуард Асадов");
-        //col2.collection.add(new Work("Кроме Любви", "Марина Цветаева"));
-        //col2.collection.add(new Work("Письмо к женщине", "Сергей Есенин"));
-        //col2.collection.add(new Work("Я любить тебя буду можно?", "Эдуард Асадов"));
+        Edition e2 = new Magazine("ГЁГ§Г¤Г ГІГҐГ«ГјГ±ГІГўГ® ГќГЉГ‘ГЊГЋ", "ГЌГ®ГўГ»Г© Г¦ГіГ°Г­Г Г«",
+                1900, 10, 1, 4, "ГЏГ®ГЅГ§ГЁГї");
+        Collect col2 = new Collect("Г±ГІГЁГµГЁ Г® Г«ГѕГЎГўГЁ", e2);
+        col2.addRecord("ГЉГ°Г®Г¬ГҐ Г‹ГѕГЎГўГЁ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ ");
+        col2.addRecord("ГЏГЁГ±ГјГ¬Г® ГЄ Г¦ГҐГ­Г№ГЁГ­ГҐ", "Г‘ГҐГ°ГЈГҐГ© Г…Г±ГҐГ­ГЁГ­");
+        col2.addRecord("Гџ Г«ГѕГЎГЁГІГј ГІГҐГЎГї ГЎГіГ¤Гі Г¬Г®Г¦Г­Г®?", "ГќГ¤ГіГ Г°Г¤ ГЂГ±Г Г¤Г®Гў");
+        //col2.collection.add(new Work("ГЉГ°Г®Г¬ГҐ Г‹ГѕГЎГўГЁ", "ГЊГ Г°ГЁГ­Г  Г–ГўГҐГІГ ГҐГўГ "));
+        //col2.collection.add(new Work("ГЏГЁГ±ГјГ¬Г® ГЄ Г¦ГҐГ­Г№ГЁГ­ГҐ", "Г‘ГҐГ°ГЈГҐГ© Г…Г±ГҐГ­ГЁГ­"));
+        //col2.collection.add(new Work("Гџ Г«ГѕГЎГЁГІГј ГІГҐГЎГї ГЎГіГ¤Гі Г¬Г®Г¦Г­Г®?", "ГќГ¤ГіГ Г°Г¤ ГЂГ±Г Г¤Г®Гў"));
 
         col2.showCollection();
-        //поиск в конкретном сборнике
-        col1.searchRecord("Эдуард Асадов");
-        col2.searchRecord("Эдуард Асадов");
+        //ГЇГ®ГЁГ±ГЄ Гў ГЄГ®Г­ГЄГ°ГҐГІГ­Г®Г¬ Г±ГЎГ®Г°Г­ГЁГЄГҐ
+        col1.searchRecord("ГќГ¤ГіГ Г°Г¤ ГЂГ±Г Г¤Г®Гў");
+        col2.searchRecord("ГќГ¤ГіГ Г°Г¤ ГЂГ±Г Г¤Г®Гў");
 
     }
 
@@ -69,8 +70,8 @@ public class Collect {
     }
 
     public void showCollection() {
-        System.out.println("Сборник: " + getCollectionTitle());
-        System.out.print("Форма: ");
+        System.out.println("Г‘ГЎГ®Г°Г­ГЁГЄ: " + getCollectionTitle());
+        System.out.print("Г”Г®Г°Г¬Г : ");
         System.out.println(getForm().toString());
 
         for (Work str : collection) {
@@ -93,7 +94,7 @@ public class Collect {
 
         Iterator<Work> itr = this.collection.iterator();
 
-        System.out.println("Ищем:'" + _searchString + "' в сборнике:" + this.getCollectionTitle());
+        System.out.println("Г€Г№ГҐГ¬:'" + _searchString + "' Гў Г±ГЎГ®Г°Г­ГЁГЄГҐ:" + this.getCollectionTitle());
         while (itr.hasNext()) {
             Work work = itr.next();
             day = work.getFirstTimePublishingDate().get(Calendar.DATE);

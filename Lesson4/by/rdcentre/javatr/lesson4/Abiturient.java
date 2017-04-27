@@ -5,6 +5,7 @@ package by.rdcentre.javatr.lesson4;
  */
 public class Abiturient {
     final int n = 4; // exams count;
+    // переменные всегда нужно называть по смыслу, например int examCount
     private String firstName;
     private String lastName;
     /* 4 exams */
@@ -110,7 +111,7 @@ public class Abiturient {
     /**
      * Created by Denis on 27.02.2017.
      */
-    public static class Customer {
+    public static class Customer {// а зачем этот класс объявлен как вложенный?
 
 
             private int id;
