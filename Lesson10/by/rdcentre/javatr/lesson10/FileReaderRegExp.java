@@ -15,7 +15,7 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
  * Created by Denis on 27.03.2017.
  */
 public class FileReaderRegExp {
-    public static void main(String[] args) {
+    public static void main(String[] args) {// все таки не стоит весь код помещать в один метод main
         FileReader fr = null;
         BufferedReader br = null;
         String sLine = "";
