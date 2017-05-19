@@ -27,7 +27,8 @@ public class FileLeasingDAO implements LeasingDAO {
                 this.l = (ArrayList) os.readObject();
 
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                e.printStackTrace();// аккурано работаем с исключениями, не гасим их, если не можем исправить
+                // а выбрасываем на верх
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
